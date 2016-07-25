@@ -48,12 +48,6 @@
                                     <segue destination="QQn-dd-4eX" kind="show" id="AhP-O0-qrb"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b9G-K4-LmH">
-                                <rect key="frame" x="186" y="92" width="42" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KoA-WN-H8U">
                                 <rect key="frame" x="144" y="296" width="126" height="30"/>
                                 <state key="normal" title="Name Randomizer"/>
@@ -61,6 +55,12 @@
                                     <segue destination="6Wx-Fx-HFz" kind="show" id="vod-XD-dKS"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Randomizer" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b9G-K4-LmH">
+                                <rect key="frame" x="161" y="93" width="92" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -70,10 +70,10 @@
             </objects>
             <point key="canvasLocation" x="1207" y="648"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller Toss-->
         <scene sceneID="wHe-Aj-2eh">
             <objects>
-                <viewController id="hPc-Uf-N9f" sceneMemberID="viewController">
+                <viewController id="hPc-Uf-N9f" customClass="ViewControllerToss" customModule="Randomizer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fr5-UH-EEn"/>
                         <viewControllerLayoutGuide type="bottom" id="Qsc-Ot-3kf"/>
@@ -81,17 +81,50 @@
                     <view key="view" contentMode="scaleToFill" id="fyU-mB-Gjy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2XU-yI-1gB">
+                                <rect key="frame" x="107" y="121" width="200" height="100"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P5E-31-C2k">
+                                <rect key="frame" x="90" y="567" width="100" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eS0-eP-Nbg">
+                                <rect key="frame" x="225" y="567" width="100" height="40"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="edn-Vn-2SK">
+                                <rect key="frame" x="167" y="386" width="80" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="37"/>
+                                <state key="normal" title="Toss"/>
+                                <connections>
+                                    <action selector="onTappedTossButton:" destination="hPc-Uf-N9f" eventType="touchUpInside" id="Qhs-GR-GZ1"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="coinTossResultLabel1" destination="2XU-yI-1gB" id="lzD-EF-TpU"/>
+                        <outlet property="headsLabel" destination="P5E-31-C2k" id="qtu-Lz-T3I"/>
+                        <outlet property="tailsLabel" destination="eS0-eP-Nbg" id="Cpz-dQ-i4u"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0aY-tk-jZk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1723" y="653"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller 3side-->
         <scene sceneID="E1z-6i-kGP">
             <objects>
-                <viewController id="QEC-Sc-KjM" sceneMemberID="viewController">
+                <viewController id="QEC-Sc-KjM" customClass="ViewController3side" customModule="Randomizer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="gTH-Oq-mOG"/>
                         <viewControllerLayoutGuide type="bottom" id="i8M-0Q-OmK"/>
@@ -99,8 +132,26 @@
                     <view key="view" contentMode="scaleToFill" id="Ouu-CW-UAe">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YX3-Qe-x5j">
+                                <rect key="frame" x="192" y="607" width="30" height="30"/>
+                                <state key="normal" title="Roll"/>
+                                <connections>
+                                    <action selector="onTappedRollButton:" destination="QEC-Sc-KjM" eventType="touchUpInside" id="Lfk-NU-eOU"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3VC-Af-3pG">
+                                <rect key="frame" x="107" y="200" width="200" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="resultLabel" destination="3VC-Af-3pG" id="j33-Nw-zYL"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="f6f-bK-e6d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -119,24 +170,24 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OPV-zi-12w">
-                                <rect key="frame" x="168" y="601" width="79" height="30"/>
+                                <rect key="frame" x="171" y="233" width="79" height="30"/>
                                 <state key="normal" title="3 Sided Die"/>
                                 <connections>
                                     <segue destination="QEC-Sc-KjM" kind="show" id="TxX-sd-jDG"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U6B-7c-7wU">
-                                <rect key="frame" x="164" y="415" width="86" height="30"/>
-                                <state key="normal" title="21 Sided Die"/>
-                                <connections>
-                                    <segue destination="n1R-hD-cZX" kind="show" id="Syf-gJ-knY"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Su8-Jq-Bfj">
-                                <rect key="frame" x="168" y="257" width="79" height="30"/>
+                                <rect key="frame" x="168" y="331" width="79" height="30"/>
                                 <state key="normal" title="6 Sided Die"/>
                                 <connections>
                                     <segue destination="gh3-mb-H6A" kind="show" id="V9v-Jj-y5B"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="U6B-7c-7wU">
+                                <rect key="frame" x="167" y="431" width="86" height="30"/>
+                                <state key="normal" title="21 Sided Die"/>
+                                <connections>
+                                    <segue destination="n1R-hD-cZX" kind="show" id="Syf-gJ-knY"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -147,10 +198,10 @@
             </objects>
             <point key="canvasLocation" x="1207" y="1514"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller2 1side-->
         <scene sceneID="V4v-xD-lNs">
             <objects>
-                <viewController id="n1R-hD-cZX" sceneMemberID="viewController">
+                <viewController id="n1R-hD-cZX" customClass="ViewController21side" customModule="Randomizer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="JKh-Un-dKv"/>
                         <viewControllerLayoutGuide type="bottom" id="lo7-ey-OaX"/>
@@ -158,17 +209,35 @@
                     <view key="view" contentMode="scaleToFill" id="yjV-DN-Wjf">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NfI-zc-25v">
+                                <rect key="frame" x="192" y="606" width="30" height="30"/>
+                                <state key="normal" title="Roll"/>
+                                <connections>
+                                    <action selector="onTappedRollButton:" destination="n1R-hD-cZX" eventType="touchUpInside" id="Z1z-ye-B7Y"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xXg-yl-aHf">
+                                <rect key="frame" x="107" y="158" width="200" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="resultTossLabel" destination="xXg-yl-aHf" id="wca-YW-U2g"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wPT-XH-pJe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1207" y="2388"/>
+            <point key="canvasLocation" x="1207" y="2399"/>
         </scene>
-        <!--View Controller-->
+        <!--View Controller 6side-->
         <scene sceneID="752-TH-ObA">
             <objects>
-                <viewController id="gh3-mb-H6A" sceneMemberID="viewController">
+                <viewController id="gh3-mb-H6A" customClass="ViewController6side" customModule="Randomizer" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="i4G-Oy-GpD"/>
                         <viewControllerLayoutGuide type="bottom" id="fJE-0f-EmW"/>
@@ -176,8 +245,26 @@
                     <view key="view" contentMode="scaleToFill" id="Kyt-kt-XGT">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AeI-eJ-sIb">
+                                <rect key="frame" x="192" y="580" width="30" height="30"/>
+                                <state key="normal" title="Roll"/>
+                                <connections>
+                                    <action selector="onTappedRollButton:" destination="gh3-mb-H6A" eventType="touchUpInside" id="u35-4b-slA"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4y2-bf-xTe">
+                                <rect key="frame" x="107" y="231" width="200" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="35"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="resultLabel" destination="4y2-bf-xTe" id="FVa-Js-sJd"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="TZN-QK-xmX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -207,14 +294,46 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="A3R-Xm-CHK">
-                                <rect key="frame" x="169" y="506" width="76" height="30"/>
+                                <rect key="frame" x="169" y="290" width="76" height="30"/>
                                 <state key="normal" title="Randomize"/>
+                                <connections>
+                                    <action selector="onPressedRandomButton:" destination="6Wx-Fx-HFz" eventType="touchUpInside" id="qUz-62-XnR"/>
+                                </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IeI-JU-04K">
+                                <rect key="frame" x="172" y="239" width="70" height="30"/>
+                                <state key="normal" title="Add name"/>
+                                <connections>
+                                    <action selector="onPressedAddName:" destination="6Wx-Fx-HFz" eventType="touchUpInside" id="mHT-l9-o28"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pXt-cL-fTy">
+                                <rect key="frame" x="57" y="349" width="300" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DKZ-aZ-0pO">
+                                <rect key="frame" x="157" y="652" width="101" height="30"/>
+                                <state key="normal" title="See The Name"/>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cku-u9-Ccg">
+                                <rect key="frame" x="0.0" y="349" width="414" height="264"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="40"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="Ctq-ZH-ble"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina55"/>
+                    <connections>
+                        <outlet property="announcerLabel" destination="pXt-cL-fTy" id="0hn-2Q-aEe"/>
+                        <outlet property="nameLabel" destination="cku-u9-Ccg" id="qFe-xg-8eU"/>
+                        <outlet property="nameTextField" destination="qdd-QD-dSA" id="OmG-2d-Sv1"/>
+                        <outlet property="nextPageButton" destination="DKZ-aZ-0pO" id="8bh-nZ-gOQ"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="H1V-LS-38T" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
