@@ -12,11 +12,12 @@ class ViewControllerToss: UIViewController {
     
     
 
+    @IBOutlet weak var coinImageView: UIImageView!
     @IBOutlet weak var tailsLabel: UILabel!
     @IBOutlet weak var headsLabel: UILabel!
-    @IBOutlet weak var coinTossResultLabel1: UILabel!
     var head = 0
     var tail = 0
+    var boop = 7
     
 
     override func viewDidLoad() {
@@ -26,15 +27,11 @@ class ViewControllerToss: UIViewController {
     func toss (){
         let chance = Int(arc4random_uniform(100))
         if chance >= 50{
-            coinTossResultLabel1.text = "Heads"
-        }
-        else{
-            coinTossResultLabel1.text = "Tails"
-        }
-        if coinTossResultLabel1.text == "Heads"{
+            coinImageView.image = UIImage (named: ("head"))
             head = head + 1
         }
-        else {
+        else{
+            coinImageView.image = UIImage (named: ("tail"))
             tail = tail + 1
         }
     }
