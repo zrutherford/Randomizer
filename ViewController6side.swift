@@ -34,15 +34,15 @@ class ViewController6side: UIViewController {
     func toss (){
         let chance = Int(arc4random_uniform(6))
         if chance == 0{
-            resultImageView.image = UIImage (named: ("one"))
+            resultImageView.image = UIImage (named: ("one face"))
             one = one + 1
         }
         else if chance == 1{
-            resultImageView.image = UIImage (named: ("one"))
+            resultImageView.image = UIImage (named: ("two face"))
             two = two + 1
         }
         else if chance == 2{
-            resultImageView.image = UIImage (named: ("one"))
+            resultImageView.image = UIImage (named: ("three face"))
             three = three + 1
         }
         else if chance == 3{
